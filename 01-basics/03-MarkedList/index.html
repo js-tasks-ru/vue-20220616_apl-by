@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
+
+  <!DOCTYPE html>
+  <html lang="ru">
+
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/assets/styles/index.css" />
@@ -18,11 +20,12 @@
           <input type="search" v-model="search" />
         </div>
         <ul>
-          <li v-for="email in emails" :class="{ marked: foundEmails.includes(email) }">{{ email }}</li>
+          <li v-for="email in handledEmails" :class="{ marked: email.marked }">{{ email.name }}</li>
         </ul>
       </div>
     </div>
 
     <script type="module" src="./script.js"></script>
   </body>
-</html>
+
+  </html>

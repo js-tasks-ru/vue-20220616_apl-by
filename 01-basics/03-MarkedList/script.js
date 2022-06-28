@@ -41,9 +41,8 @@ const App = defineComponent({
   },
 
   computed: {
-    foundEmails() {
-      if (this.search === '') return [];
-      return this.emails.filter((i) => i.includes(this.search));
+    handledEmails() {
+      return this.emails.map((i) => ({ name: i, marked: i.includes(this.search) && this.search }));
     },
   },
 });
