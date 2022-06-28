@@ -1,4 +1,3 @@
-import { isThisSecond } from 'date-fns';
 import { createApp, defineComponent } from './vendor/vue.esm-browser.js';
 
 // Создайте Vue приложение
