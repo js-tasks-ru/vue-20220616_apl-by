@@ -4,9 +4,23 @@ export default defineComponent({
   name: 'CounterButton',
 
   // Компонент должен иметь входной параметр
+  props: {
+    count: {
+      type: Number,
+      validator: (value) => typeof value === 'number',
+      default: 0,
+    },
+  },
+
+  emits: ['update:count'],
 
   // Шаблон лучше держать максимально простым, а логику выносить в методы
+  methods: {
+    increase(value) {
+      this.$emit('update:count', (value += 1));
+    },
+  },
 
   // Шаблон потребуется отредактировать
-  template: `<button type="button">1</button>`,
+  template: `<button type="button" @click="increase(count)" >{{ count }}</button>`,
 });
