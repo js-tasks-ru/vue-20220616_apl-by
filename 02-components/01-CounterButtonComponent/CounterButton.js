@@ -16,8 +16,8 @@ export default defineComponent({
 
   // Шаблон лучше держать максимально простым, а логику выносить в методы
   methods: {
-    increase(value) {
-      this.$emit('update:count', (value += 1));
+    increase() {
+      this.$emit('update:count', this.count + 1);
     },
   },
 
