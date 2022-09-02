@@ -4,6 +4,10 @@ export const router = createRouter({
   history: createWebHistory('/05-vue-router/02-NotFound'),
   routes: [
     {
+      path: '/:pathMatch(.*)*',
+      component: () => import('../views/PageNotFound'),
+    },
+    {
       path: '/page-a',
       alias: '/',
       component: () => import('../views/PageA'),
